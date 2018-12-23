@@ -39,7 +39,6 @@ class ConnectedAppointmentForm extends Component {
       momentDateObj: props.appointment !== null ? moment(props.appointment) :  null // NB: default now() 00:00 ?
     };
     //this.getValidDate = this.getValidDate.bind(this);
-    //this.getDefaultDateValue = this.getDefaultDateValue.bind(this);
     this.onHandleChangeDateTime = this.onHandleBlurDateTime.bind(this);
     this.onHandleBlurDateTime = this.onHandleBlurDateTime.bind(this);
   }
@@ -58,14 +57,6 @@ class ConnectedAppointmentForm extends Component {
   }
 
   // NB : test moment.js : http://jsfiddle.net/hobbyman/bkqU5/
-  /*
-  getDefaultDateValue(){
-    console.info(`[${this.constructor.name}].getDefaultDateValue`, arguments);
-    // next day starting at 7AM
-    const momentDateObj = moment().add(1, 'days').hours(7).minutes(0).seconds(0);
-    return new Date(momentDateObj.format());
-  }
-  */
   getValidDate(currentDate){
     //console.info(`[${this.constructor.name}].getValidDate`, currentDate);
 
@@ -77,7 +68,7 @@ class ConnectedAppointmentForm extends Component {
   }
 
   getValidTimes(){
-    console.info(`[${this.constructor.name}].getValidDate`, arguments);
+    console.info(`[${this.constructor.name}].getValidTimes`, arguments);
     return {
       hours: {
         min: 7,
@@ -149,6 +140,7 @@ class ConnectedAppointmentForm extends Component {
            <div className='dateTime-container'>
             <DateTime
               locale='fr'
+              inputProps = {{readOnly:true}}
               defaultValue = {defaultValue}
               isValidDate = {this.getValidDate}
               timeConstraints = {timeConstraints}

@@ -261,7 +261,7 @@ https://www.fourkitchens.com/blog/article/responsive-multi-column-lists-flexbox/
   https://hibiken.github.io/react-places-autocomplete/
 */
 .dateTime-container {
-  width: 30%;
+  width: 20%;
   max-width: 500px;
   margin: 40px auto 0;
 }
