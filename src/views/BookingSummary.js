@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import API from '../api/API.js';
 
@@ -6,7 +7,7 @@ import { Button } from 'reactstrap';
 
 import { Navigation } from '../Navigation';
 
-import Stepper from '../components/Stepper/Stepper.js';
+//import Stepper from '../components/Stepper/Stepper.js';
 import Basket from '../components/Basket/Basket.js';
 
 import { connect } from "react-redux";
@@ -154,12 +155,16 @@ class ConnectedBookingSummary extends Component {
              <Button color="primary" onClick = {() => this.handleClickConfirmBtn()}>Confirm</Button>
            </section>
 
-           <Stepper />
-           <Basket />
         </div>
       )
    }
 }
+
+ConnectedBookingSummary.propTypes = {
+  prestations: PropTypes.array.isRequired,
+  address: PropTypes.string.isRequired,
+  appointment: PropTypes.string.isRequired
+};
 
 const BookingSummary = connect(mapStateToProps, mapDispatchToProps)(ConnectedBookingSummary);
 
