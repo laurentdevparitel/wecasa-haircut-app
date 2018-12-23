@@ -24,7 +24,7 @@ class ConnectedHome extends Component {
   }
 
   componentDidMount() {
-    console.info(`[${this.constructor.name}].componentDidMount`);
+    //console.info(`[${this.constructor.name}].componentDidMount`);
     this.props.storeCurrentNavigationIndex(getNavigationIndexFromView('Home', Navigation));  // redux storage
   }
 

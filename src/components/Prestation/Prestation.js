@@ -25,7 +25,6 @@ const mapDispatchToProps = dispatch => {
 class ConnectedPrestation extends Component {
   constructor(props) {
     super(props);
-    //console.log('Prestation props:', props.data)
     this.state = {
       duration: props.data.duration,
       price: props.data.price,
@@ -43,7 +42,7 @@ class ConnectedPrestation extends Component {
   }
 
   componentDidMount() {
-    //console.info('Prestation.componentDidMount');
+    //console.info(`[${this.constructor.name}].componentDidMount`);
   }
 
   formatDuration(duration, unit = 'min'){
@@ -67,15 +66,13 @@ class ConnectedPrestation extends Component {
   }
 
   getPrestation(prestationReference){
-    console.log('getPrestation: ', prestationReference);
+    //console.info(`[${this.constructor.name}].getPrestation`, prestationReference);
 
     if (!this.props.catalog){
       throw new Error('Catalog not set !');
-      return  false;
     }
     if (typeof (this.props.catalog.categories) === "undefined"){
       throw new Error('No catalog categories found !');
-      return  false;
     }
 
     let foundPrestation = null;
@@ -90,18 +87,13 @@ class ConnectedPrestation extends Component {
   }
 
   handleClickDescription(prestationReference){
-    console.log('handleClickDescription: ', prestationReference);
-
-    // Get prestation obj from prestationReference
-    //console.log(this.props.catalog);
+    //console.info(`[${this.constructor.name}].handleClickDescription`, prestationReference);
 
     const prestation = this.getPrestation(prestationReference);
 
     if (!prestation){
       throw new Error('Prestation '+prestationReference+' not found !');
-      return false;
     }
-    //console.log(prestation);
 
     // Update modalBox props & state
     this.setState({modalBox: {
@@ -111,12 +103,11 @@ class ConnectedPrestation extends Component {
   }
 
   handleClickAdd(prestationReference){
-    console.log('handleClickAdd: ', prestationReference);
+    //console.info(`[${this.constructor.name}].handleClickAdd`, prestationReference);
 
     const prestation = this.getPrestation(prestationReference);
     if (!prestation){
       throw new Error('Prestation '+prestationReference+' not found !');
-      return false;
     }
     this.props.addPrestation(prestation);
   }

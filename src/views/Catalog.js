@@ -26,7 +26,7 @@ const mapDispatchToProps = dispatch => {
   return {
     storeCatalog: catalog => dispatch(storeCatalog(catalog)),
     storeCurrentNavigationIndex: navigationIndex => dispatch(storeCurrentNavigationIndex(navigationIndex))
-    //storeCurrentPrestation: prestation => dispatch(storeCurrentPrestation(prestation))  // TO IMPLEMENT
+    //storeCurrentPrestation: prestation => dispatch(storeCurrentPrestation(prestation))  // TO IMPLEMENT ?
   };
 };
 
@@ -42,7 +42,7 @@ class ConnectedCatalog extends Component {
   }
 
   componentDidMount() {
-    console.info(`[${this.constructor.name}].componentDidMount`);
+    //console.info(`[${this.constructor.name}].componentDidMount`);
     //console.info('getCurrentPathname:', this.context.router.getCurrentPathname()); // KO
 
     this.props.storeCurrentNavigationIndex(getNavigationIndexFromView('Catalog', Navigation));  // redux storage

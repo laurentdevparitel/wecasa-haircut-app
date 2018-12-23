@@ -18,7 +18,7 @@ class ConnectedHeader extends Component {
   }
 
   componentDidMount() {
-    console.info(`[${this.constructor.name}].componentDidMount`);
+    //console.info(`[${this.constructor.name}].componentDidMount`);
     console.log(`[${this.constructor.name}] currentNavigationIndex:`, this.props.currentNavigationIndex)
   }
   render () {

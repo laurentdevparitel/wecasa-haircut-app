@@ -44,7 +44,7 @@ class ConnectedAddressForm extends Component {
   }
 
   componentDidMount() {
-    console.info(`[${this.constructor.name}].componentDidMount`, this.props);
+    //console.info(`[${this.constructor.name}].componentDidMount`, this.props);
     this.props.storeCurrentNavigationIndex(getNavigationIndexFromView('AddressForm', Navigation));  // redux storage
 
     this.setState({
@@ -54,7 +54,7 @@ class ConnectedAddressForm extends Component {
   }
 
   componentWillReceiveProps (nextProps) { // called after componentDidMount
-    console.info(`[${this.constructor.name}].componentWillReceiveProps`, nextProps);
+    //console.info(`[${this.constructor.name}].componentWillReceiveProps`, nextProps);
   }
 
   handleChange = address => {

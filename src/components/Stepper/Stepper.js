@@ -5,7 +5,7 @@ import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 import { Navigation } from '../../Navigation';
 
-import { isEmptyBasket, getNavigationByIndex } from '../../helpers.js';
+import { isEmptyBasket, getNavigationByIndex, redirectTo } from '../../helpers.js';
 
 const mapStateToProps = state => {
   return {
@@ -48,7 +48,7 @@ class ConnectedStepper extends Component {
   }
 
   componentDidMount() {
-    console.info(`[${this.constructor.name}].componentDidMount`);
+    //console.info(`[${this.constructor.name}].componentDidMount`);
     console.log(`[${this.constructor.name}] currentNavigationIndex:`, this.props.currentNavigationIndex);
 
     this.setState({
@@ -58,8 +58,8 @@ class ConnectedStepper extends Component {
   }
 
   componentWillReceiveProps (nextProps) { // called after componentDidMount
-    console.info(`[${this.constructor.name}].componentWillReceiveProps`, nextProps);
-    console.log(`[${this.constructor.name}] currentNavigationIndex:`, nextProps.currentNavigationIndex);
+    //console.info(`[${this.constructor.name}].componentWillReceiveProps`, nextProps);
+    console.log(`[${this.constructor.name}].componentWillReceiveProps currentNavigationIndex:`, nextProps.currentNavigationIndex);
 
     this.setState({
       hasPreviousStep: nextProps.currentNavigationIndex > 1,
@@ -86,7 +86,7 @@ class ConnectedStepper extends Component {
     }
 
     // Update URL
-    window.location.href = window.location.origin + path;
+    redirectTo(path);
   }
 
   render () {

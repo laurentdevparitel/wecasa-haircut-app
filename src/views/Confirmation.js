@@ -7,7 +7,7 @@ import { Navigation } from '../Navigation';
 import { connect } from "react-redux";
 import { storeCurrentNavigationIndex, initPrestations, initAddress, initAppointment} from "../redux/actions/actions.js";
 
-import { getNavigationIndexFromView, getNavigationBySlug, getNavigationByIndex, redirectTo } from '../helpers.js';
+import { getNavigationIndexFromView, getNavigationBySlug, redirectTo } from '../helpers.js';
 
 const mapStateToProps = state => {
   return {

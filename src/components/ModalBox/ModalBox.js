@@ -13,25 +13,20 @@ export default class ModalBox extends Component {
       title: props.data.title,
       content: props.data.content
     }
-    this.toggle = this.toggle.bind(this);    
+    this.toggle = this.toggle.bind(this);
     //this.modalBoxRef = React.createRef();
   }
 
   componentDidMount() {
-    //console.info('ModalBox.componentDidMount');
+    //console.info(`[${this.constructor.name}].componentDidMount`);
   }
 
   componentDidUpdate(prevProps, prevState, snapshot){
-    //console.info('ModalBox.componentDidUpdate', prevProps, prevState);
+    //console.info(`[${this.constructor.name}].componentDidUpdate`, prevProps, prevState);
   }
-/*
-  shouldComponentUpdate(nextProps, nextState){
-    //console.info('ModalBox.shouldComponentUpdate', nextProps, nextState);
-    //return true;
-  }
-*/
+
   componentWillReceiveProps(nextProps) {  // ... deprecated
-      //console.info('ModalBox.componentWillReceiveProps', nextProps);
+    //console.info(`[${this.constructor.name}].componentWillReceiveProps`, nextProps);
       this.setState({
         modal: nextProps.data.modal,
         title: nextProps.data.title,

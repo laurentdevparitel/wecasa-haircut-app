@@ -7,8 +7,6 @@ import { ListGroup, ListGroupItem, Badge, Button  } from 'reactstrap';
 
 import { getIndexedPrestations, convertMinToMinAndHour } from '../../helpers.js';
 
-//import BasketItems from './BasketItems.js';
-
 const mapStateToProps = state => {
   return {
     prestations: state.prestations,
@@ -38,7 +36,7 @@ class ConnectedBasket extends Component {
   }
 
   componentDidMount() {
-    //console.info('Basket.componentDidMount');
+    //console.info(`[${this.constructor.name}].componentDidMount`);
   }
 
   // To store ?

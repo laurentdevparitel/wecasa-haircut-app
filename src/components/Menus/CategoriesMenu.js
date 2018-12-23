@@ -4,7 +4,6 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
 export default class CategoriesMenu extends Component {
   constructor(props) {
     super(props);
-    //console.log('props:', props.data)
     this.state = {
         categories: props.data
     }

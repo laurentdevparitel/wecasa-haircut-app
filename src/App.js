@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import ReduxTestApp from './redux/components/ReduxTestApp';
-
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -33,7 +31,6 @@ class App extends Component {
           )}/>
           <Route exact={true} path={getNavigationBySlug('catalog', Navigation).path} render={() => (
               <div className="App">
-                {/*<ReduxTestApp />*/}
                 <Header />
                 <Catalog />
                 <Footer />

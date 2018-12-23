@@ -94,13 +94,12 @@ class ConnectedAppointmentForm extends Component {
     //console.log(`[${this.constructor.name}].onHandleChangeDateTime`, date);
   }
   onHandleViewModeChangeDateTime(date){
-    console.log(`[${this.constructor.name}].onHandleViewModeChangeDateTime`, date);
+    //console.log(`[${this.constructor.name}].onHandleViewModeChangeDateTime`, date);
   }
 
   onHandleBlurDateTime(date){
     console.log(`[${this.constructor.name}].onHandleBlurDateTime`, date);
     const date_ISO = date.format();
-    //const date_ISO2 = date.toISOString();
 
     console.log(`[${this.constructor.name}].onHandleBlurDateTime date_ISO: `, date_ISO);
 
@@ -139,7 +138,7 @@ class ConnectedAppointmentForm extends Component {
         }
       }
 
-      // next day starting at 7AM
+      // next day starting at 7AM !
       const defaultMomentDateObj = moment().add(1, 'days').hours(7).minutes(0).seconds(0);
       const defaultValue = new Date(defaultMomentDateObj.format())
 
@@ -164,7 +163,7 @@ class ConnectedAppointmentForm extends Component {
               <h3> Your Appointment : </h3>
 
               <p>{this.getFormatDate(this.state.momentDateObj)}</p>
-              <p><i>{this.props.appointment}</i></p>
+              {/*<p><i>{this.props.appointment}</i></p>*/}
             </div>
 
            <Stepper />
