@@ -26,13 +26,13 @@ class ConnectedHeader extends Component {
         <header className="header">
           <img src={logo} className="logo" alt="logo" />
 
-          <Nav>
+          {/*<Nav>
             {Navigation.map((obj,index) => (
               <NavItem key={index}>
                 <NavLink href={obj.path} active={(index === this.props.currentNavigationIndex ? true:false)}>{obj.title}</NavLink>
               </NavItem>
             ))}
-          </Nav>
+          </Nav>*/}
 
         </header>
       )
